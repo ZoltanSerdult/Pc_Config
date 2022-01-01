@@ -30,5 +30,9 @@ namespace Pc_Config
             Gamer = gamer;
             Rendszer = rendszer;
         }
+        public override string ToString()
+        {
+            return Nev + " - " + Rendszer + " - " + Tulaj + " - " + Gamer;
+        }
     }
 }

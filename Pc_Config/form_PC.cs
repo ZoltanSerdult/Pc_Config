@@ -10,11 +10,32 @@ using System.Windows.Forms;
 
 namespace Pc_Config
 {
-    public partial class form_PC : Form
+    public partial class Form_PC : Form
     {
-        public form_PC()
+        public Form_PC()
         {
             InitializeComponent();
+        }
+
+        private void form_PC_Load(object sender, EventArgs e)
+        {
+            foreach (var item in Enum.GetNames(typeof(OS)))
+            {
+                comboBox_OS.Items.Add(item);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OS rendszer = (OS)Enum.Parse(typeof(OS), comboBox_OS.SelectedItem.ToString());
+            PC uj = new PC(
+                textBox_ConfigNev.Text,
+                textBox_Tulaj.Text,
+                checkBox_Gamer.Checked,
+                rendszer
+                );
+            Program.form1.listBox_Mutat.Items.Add(uj);
+            
         }
     }
 }

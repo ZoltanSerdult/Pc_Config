@@ -16,5 +16,10 @@ namespace Pc_Config
         {
             InitializeComponent();
         }
+
+        private void button_Pcfevetel_Click(object sender, EventArgs e)
+        {
+            Program.form_PC.ShowDialog();
+        }
     }
 }

@@ -8,15 +8,15 @@ namespace Pc_Config
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
+        public static Form1 form1 = null;
+        public static Form_PC form_PC = null;
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            form1 = new Form1();
+            form_PC = new Form_PC();
+            Application.Run(form1);
         }
     }
 }
